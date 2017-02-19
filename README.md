@@ -2,9 +2,10 @@
 
 This module is designed for being self-disabled depending on a given variable, in this example AWS_S3_ENABLED.
 Instead of checking the variable in the main application many times, it is the class itself which decides what to do.
-This way we prevent:
+
+This way we **prevent**:
 - Duplicating code, by making many similar if statements all around the application
-- Couple the module from the main application, through global settings and conditionals.
+- Coupling the module from the main application, through global settings and conditionals.
 - Make testing more difficult.
 
 It was initially though for Django applications but it may be used in others frameworks or standalone. Instructions will
@@ -12,13 +13,13 @@ be provided bellow, in the section #Usage.
 
 ## Advanced notes
 
-This approach is based on the principle _Tell don't ask_ and on polymorphism. It uses and abstract class to define
+This approach is based on the principle _Tell don't ask_ and on polymorphism. It uses an abstract class to define
 the interface and a _dummy_ class that will replace the real class when disabled - hence the polymorphism.
 
 # Implementation and dependencies
 
 There are 3 classes in aws_s3_dummy:
-- An interface ( abstrac class)
+- An interface ( abstract class)
 - A dummy class
 - The real class
 
